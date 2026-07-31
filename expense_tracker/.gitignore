@@ -1,0 +1,32 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Database (contains personal financial data - never commit)
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Exported reports
+*.xlsx
+*.csv
+!requirements.txt
+exports/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
