@@ -105,8 +105,12 @@ class AppShell(ctk.CTkFrame):
 
         screen = self.screens[screen_name]
         screen.tkraise()
+        # Force the screen switch to render immediately, then load the
+        # (potentially heavier) data/charts a moment later. This avoids
+        # the whole app freezing for a beat on every navigation click.
+        self.update_idletasks()
         if hasattr(screen, "refresh"):
-            screen.refresh()
+            self.after(30, screen.refresh)
 
     def refresh_all_screens(self):
         """Called after any CRUD operation so every screen shows live data."""
